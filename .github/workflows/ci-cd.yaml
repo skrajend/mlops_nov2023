@@ -32,3 +32,9 @@ jobs :
       - name : Test with pytest
         run : |
           pytest -v
+      - name : Deploy to Netify
+      uses: jsmrcaga/action-netlify-deploy@v2
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          DEPLOY_PRIME_BRANCH: true
