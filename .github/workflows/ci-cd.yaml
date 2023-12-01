@@ -32,6 +32,10 @@ jobs :
       - name : Test with pytest
         run : |
           pytest -v
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
       - name : Deploy to Netify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
