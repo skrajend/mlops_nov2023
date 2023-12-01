@@ -33,3 +33,8 @@ stages :
         cache: false  
     outs :
       - saved_models/model.joblib
+
+    call_for_microservice:
+    cmd: python src/request_microservice.py
+    deps:
+      - src/request_microservice.py    
